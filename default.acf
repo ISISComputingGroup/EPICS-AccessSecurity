@@ -1,0 +1,35 @@
+/* default instrument access security file
+ * always use WRITE,TRAPWRITE to allow gateway put logging and IOC CaPutLog to work 
+ *
+ * $Id$
+ */
+
+UAG(inst) { spudulike }
+HAG(inst) { localhost }
+
+/* this is the security group for all records that do not secify a different security group in the ASG field  
+ * Everybody can always read, everybody can write except when EXCLUSIVE is set then only spudulike on localhost can write
+ */
+ASG(DEFAULT)
+{
+    INPA("$(P)CS:EXCLUSIVE")
+    RULE(1, READ)
+    RULE(1, WRITE, TRAPWRITE)
+    {
+        CALC("A=0")
+    }
+    RULE(1, WRITE, TRAPWRITE)
+    {
+        UAG(inst)
+        HAG(inst)
+        CALC("A=1")
+    }
+}
+
+/* Security group for records where everybody can always read and write */
+ASG(ANYBODY)
+{
+    RULE(1, READ)
+    RULE(1, WRITE, TRAPWRITE)
+}
+
