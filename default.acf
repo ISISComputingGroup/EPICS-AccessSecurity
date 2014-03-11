@@ -12,18 +12,19 @@ HAG(inst) { localhost }
 # Everybody can always read, everybody can write except when EXCLUSIVE is set then only spudulike on localhost can write
 ASG(DEFAULT)
 {
-    INPA("$(P)CS:EXCLUSIVE")
+#    INPA("$(P)CS:EXCLUSIVE")
     RULE(1, READ)
     RULE(1, WRITE, TRAPWRITE)
-    {
-        CALC("A=0")
-    }
-    RULE(1, WRITE, TRAPWRITE)
-    {
-        UAG(inst)
-        HAG(inst)
-        CALC("A=1")
-    }
+#    RULE(1, WRITE, TRAPWRITE)
+#    {
+#        CALC("A=0")
+#    }
+#    RULE(1, WRITE, TRAPWRITE)
+#    {
+#        UAG(inst)
+#        HAG(inst)
+#        CALC("A=1")
+#    }
 }
 
 # Security group for records where everybody can always read and write 
