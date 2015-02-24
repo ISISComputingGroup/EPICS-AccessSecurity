@@ -10,7 +10,7 @@
 #UAG(instuser) { spudulike }
 
 # comma separated machine list
-HAG(instmachine) { ndllarmor1 }
+HAG(instmachine) { ndllarmor1, ndclarmor }
 
 # this is the security group for all records that do not secify a different security group in the ASG field  
 # Everybody can always read, everybody can write except when EXCLUSIVE is set then only spudulike on localhost can write
