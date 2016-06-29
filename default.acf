@@ -10,7 +10,7 @@
 #UAG(instuser) { spudulike }
 
 # comma separated machine list
-HAG(instmachine) { localhost, $(ACF_INSTHOST1=localhost), $(ACF_INSTHOST2=localhost), $(ACF_INSTHOST3=localhost) }
+HAG(instmachine) { localhost, $(ACF_IH1=localhost), $(ACF_IH2=localhost), $(ACF_IH3=localhost), $(ACF_IH4=localhost) }
 HAG(localhost) { localhost }
 
 # this is the security group for all records that do not secify a different security group in the ASG field  
