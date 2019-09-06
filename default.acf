@@ -79,3 +79,7 @@ ASG(MANAGER) {
 		CALC("A=1")
     }
 }
+# Security group to be used by Cryogenic SMS PSU, cannot read or write to anything
+ASG(HIDDEN) {
+    RULE(1, NONE)
+}
