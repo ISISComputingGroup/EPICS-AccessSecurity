@@ -60,9 +60,9 @@ ASG(READONLY) {
 ASG(WASL0) {
     RULE(1, READ)
     RULE(0, WRITE, TRAPWRITE)
-    {
-        HAG(instmachine)
-    }
+#    {
+#        HAG(instmachine)
+#    }
 }
 
 # Security group for records where everybody can always read and write 
