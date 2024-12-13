@@ -55,8 +55,9 @@ ASG(READONLY) {
     RULE(1, READ)
 }
 
-# only allow writes to  values in access security level zero (ASL0), things 
-# like VAL, but restricts other fields 
+# only allow writes to field values in access security level zero (ASL0),
+# things like VAL are in ASL0 but other fields may not be. The ASL is set
+# in the DBD file of the record
 ASG(WASL0) {
     RULE(1, READ)
     RULE(0, WRITE, TRAPWRITE)
